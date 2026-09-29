@@ -22,8 +22,9 @@ function updateCompletedCount() {
 addTaskButton.addEventListener("click", function () {
   // console.log(inputField.value); // eget test av input fältets värde
   const taskText = inputField.value.trim();
+  const warning = document.getElementById("warning");
   if (taskText === "") {
-    alert(textInEmtyInputField);
+    warning.textContent = textInEmtyInputField ;
     return;
   }
   const taskItem = document.createElement("li"); // skapa en li element
