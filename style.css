@@ -1,13 +1,47 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #fdc4c4, #f89999);
+}
+
+.toDoContainer {
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #fff;
+    max-width: 600px;
+    text-align: center;
+    animation: slideDown 0.8s ease-out;
+}
+h1 {
+    font-size: 49px;
+}
+
 .completed {
     text-decoration: line-through;
 }
-.delete-button {
-    margin-left: 10px;
-    
-}
+
 
 #taskList li {
     display: flex;
     justify-content: space-between;
     margin-bottom: 8px;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    
+    }
+    80% {
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes taskIn{
+    
 }
