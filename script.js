@@ -1,5 +1,5 @@
 console.log("JavaScript is running!");
-const textInEmtyInputField = "Du måste skriva något i input fältet!"; // test av alert med variabeln x
+const textInEmtyInputField = " Input must not be empty "; // test av alert med variabeln x
 const inputField = document.getElementById("taskInput"); // input fältet
 const addTaskButton = document.getElementById("addTaskButton"); // inputt knappen
 const taskList = document.getElementById("taskList"); // ul elementet som ska innehålla li elementet
