@@ -37,7 +37,7 @@ h1 {
 .flashForWarning {
     animation: flashForWarning 0.5s;
 }
-
+/* animationen för att slida ner toDoContainer */
 @keyframes slideDown {
     0% {
         opacity: 0;
@@ -52,7 +52,7 @@ h1 {
         transform: translateY(0);
     }
 }
-
+/* animationen för att lägga till en task */
 @keyframes taskIn{
     0% {
         opacity: 0;
@@ -63,16 +63,23 @@ h1 {
         transform: translateY(0);
     }
 }
-
+/* animationen för flasha texten */
 @keyframes flashForWarning {
     0% { 
         opacity: 1;
     }
-    50% {
+    40% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    80% {
         opacity: 0;
     }
     100% {
         opacity: 1;
     }
+
 }
 

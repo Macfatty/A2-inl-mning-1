@@ -4,8 +4,12 @@ const inputField = document.getElementById("taskInput"); // input fältet
 const addTaskButton = document.getElementById("addTaskButton"); // inputt knappen
 const taskList = document.getElementById("taskList"); // ul elementet som ska innehålla li elementet
 const completedTasks = document.getElementById("completedTasks"); // hämtar span elementet
-
+const warning = document.getElementById("warning"); // hämtar p för warning texten
 const tasks = [];
+
+warning.addEventListener("animationend", function () {
+  warning.classList.remove("flashForWarning");
+});
 
 function updateCompletedCount() {
   let completedCount = 0;
@@ -22,11 +26,12 @@ function updateCompletedCount() {
 addTaskButton.addEventListener("click", function () {
   // console.log(inputField.value); // eget test av input fältets värde
   const taskText = inputField.value.trim();
-  const warning = document.getElementById("warning");
   if (taskText === "") {
+    warning.classList.add("flashForWarning");
     warning.textContent = textInEmtyInputField ;
     return;
   }
+  warning.textContent = "";
   const taskItem = document.createElement("li"); // skapa en li element
 
   const taskO = { text: taskText, completed: false }; // skapa ett objekt med text och completed egenskaper
