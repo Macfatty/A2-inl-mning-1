@@ -2,6 +2,7 @@ body {
     margin: 0;
     min-height: 100vh;
     background: linear-gradient(to bottom, #fdc4c4, #f89999);
+    
 }
 
 .toDoContainer {
@@ -21,13 +22,23 @@ h1 {
     color: gray;
 }
 
+#taskList {
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 0;
+}
 
 #taskList li {
+    
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 10px;
     margin-bottom: 8px;
     animation: taskIn 0.5s ease-out;
-    transition: color 0.5s, ease;
+    transition: color 0.5s ease;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    
 }
 
 #warning {
@@ -56,7 +67,7 @@ h1 {
 @keyframes taskIn{
     0% {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(20px);
     }
     100% {
         opacity: 1;
