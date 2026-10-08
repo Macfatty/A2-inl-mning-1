@@ -32,11 +32,12 @@ addTaskButton.addEventListener("click", function () {
     return;
   }
   warning.textContent = "";
+  const textTaskSpan = document.createElement("span");
+  textTaskSpan.textContent = taskText; // sätt texten i li elementet till input fältets värde
   const taskItem = document.createElement("li"); // skapa en li element
 
   const taskO = { text: taskText, completed: false }; // skapa ett objekt med text och completed egenskaper
   //console.log(taskO); // test av objektet
-  taskItem.textContent = taskText; // sätt texten i li elementet till input fältets värde
   const deleteButton = document.createElement("button"); // skapar delet knappen 
   deleteButton.classList.add("delete-button") // för css stylingen 
   deleteButton.textContent = "🗑";
@@ -63,8 +64,8 @@ addTaskButton.addEventListener("click", function () {
 
     console.log(taskO);
   });
-
   taskList.appendChild(taskItem); // lägg till li elementet i ul elementet
+  taskItem.appendChild(textTaskSpan);  // lägg till span elementet i li elementet
   taskItem.appendChild(deleteButton); // lägg till delete i li
   deleteButton.addEventListener("click", function (event) {
     event.stopPropagation();
